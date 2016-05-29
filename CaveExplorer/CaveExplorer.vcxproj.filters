@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Actors">
+      <UniqueIdentifier>{15b97392-ce08-4e51-bfce-13322d94de45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{6af2c757-882c-43f1-aea6-aebc945c97ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{7dc1cad0-0112-4f84-91ab-13693d723ebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game States">
+      <UniqueIdentifier>{e54dbb77-893b-4f5e-a8ad-a93d94163b09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Cave">
+      <UniqueIdentifier>{e8f6c2f8-50da-4de4-b124-d83f92845c74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{74fa098f-2fa5-4406-b58e-9b0f56c2a579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{36e5533b-e519-4dd4-9812-493dc0c28425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI">
+      <UniqueIdentifier>{81f0ba76-849a-48d9-af2c-92d0fd5a31e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsManager.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Usable.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Game States</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game States</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Game States</Filter>
+    </ClCompile>
+    <ClCompile Include="Cave.cpp">
+      <Filter>Cave</Filter>
+    </ClCompile>
+    <ClCompile Include="CaveTile.cpp">
+      <Filter>Cave</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Game States</Filter>
+    </ClCompile>
+    <ClCompile Include="UIButton.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Rat.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Stairs.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="PatrolState.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorAgent.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedActor.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Actor.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Usable.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Game States</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game States</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Game States</Filter>
+    </ClInclude>
+    <ClInclude Include="Cave.h">
+      <Filter>Cave</Filter>
+    </ClInclude>
+    <ClInclude Include="CaveTile.h">
+      <Filter>Cave</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Game States</Filter>
+    </ClInclude>
+    <ClInclude Include="UIButton.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Rat.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Stairs.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="PatrolState.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorAgent.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedActor.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
