@@ -22,24 +22,18 @@ public:
 	GameState* getGameState();
 	void setEndGame(bool end);
 
-	GameObjectVector* getGameObjects();
-	Goal* getGoal();
 	static bool getDebugging();
 	static sf::Font* getFont();
 private:
 	void update();
 	void initialize();
-	void initializeText();
-	void deleteGameObjects();
 	void handleEvents();
-	void createAIAndGoal();
 	void updateDeltaTime();
 
 	GameState* m_pCurrentState;
 	GameState* m_pPreviousState;
 	GameState* m_pGlobalState;
 
-	GameObjectVector m_GameObjects;
 	sf::Text m_Text;
 	sf::Text m_DTimerText;
 	sf::Clock m_Clock;

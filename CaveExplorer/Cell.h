@@ -6,7 +6,7 @@
 
 class Cell{
 public:
-	Cell(const sf::Vector2f pos, const float width, const float height);
+	Cell(const sf::Vector2f pos, const float width, const float height, const sf::Vector2u gridPos);
 	~Cell();
 	void draw();
 	sf::Sprite* getSprite();
@@ -26,11 +26,9 @@ public:
 	void setParentCell(Cell* pParent);
 	void clearValues();
 private:
-	void createWallShape();
 
 	sf::Sprite* m_pSprite;
 	sf::RectangleShape m_CellShape;
-	sf::RectangleShape* m_pWallShape;
 	sf::Vector2f m_Position;
 	sf::Text m_IndexText;
 	sf::Vector2f m_GridPos;

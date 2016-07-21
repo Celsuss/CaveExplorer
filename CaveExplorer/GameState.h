@@ -24,7 +24,7 @@ public:
 	virtual ~GameState();
 
 	virtual void enter();
-	virtual void update(Game* game, float dt);
+	virtual void update(const Game* game, const float dt);
 	virtual void exit();
 
 	virtual void createActor(Actor* actor);

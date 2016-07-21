@@ -4,6 +4,7 @@
 #include <vector>
 
 class Actor;
+class Level;
 class CaveTile;
 
 class CollisionManager{
@@ -12,7 +13,7 @@ public:
 	typedef std::vector<CaveTile*>CaveTileVector;
 
 	static CollisionManager* getInstance();
-	void collisionDetection();
+	void collisionDetection(Level* level);
 	void addActorToCollision(Actor* actor);
 	void addCaveTilesCollision(Actor* caveTile);
 private:
@@ -20,8 +21,8 @@ private:
 	~CollisionManager();
 	static CollisionManager* m_Instance;
 
-	void actorActorCollisionDetection();
-	void actorCaveCollisionDetection();
+	void actorActorCollisionDetection(Level* level);
+	void actorCaveCollisionDetection(Level* level);
 
 	void pointInRectangle();
 	void intersectCircle();

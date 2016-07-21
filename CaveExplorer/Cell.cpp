@@ -1,24 +1,33 @@
 #include "Cell.h"
 #include "TextureManager.h"
 #include "GraphicManager.h"
+#include "GridManager.h"
 #include "Game.h"
 
-Cell::Cell(const sf::Vector2f pos, const float width, const float height){
-	m_pWallShape = nullptr;
-	m_pSprite = new sf::Sprite(*TextureManager::getInstance()->getTexture("Grid_G"));
-	m_pSprite->setPosition((sf::Vector2f)pos);
-
+Cell::Cell(const sf::Vector2f pos, const float width, const float height, const sf::Vector2u gridPos){
 	m_CellShape.setSize(sf::Vector2f(width, height));
 	m_CellShape.setPosition(pos);
 	m_CellShape.setFillColor(sf::Color::Transparent);
 	m_CellShape.setOutlineColor(sf::Color::Green);
 	m_CellShape.setOutlineThickness(1);
 
+	if (gridPos.x == 0 || gridPos.x == GridManager::GRID_WIDTH-1 || gridPos.y == 0 || gridPos.y == GridManager::GRID_HEIGHT-1){
+		m_pSprite = new sf::Sprite(*TextureManager::getInstance()->getTexture("brick_dark0"));
+		setIsWalkable(false);
+	}
+	else{
+		m_pSprite = new sf::Sprite(*TextureManager::getInstance()->getTexture("floor_vines1"));
+		setIsWalkable(true);
+	}
+
+	m_pSprite->setPosition((sf::Vector2f)pos);
+	m_pSprite->setScale(width / m_pSprite->getLocalBounds().width, height / m_pSprite->getLocalBounds().height);
+
+
 	m_Position = sf::Vector2f(pos);
 
 	m_GridPos = sf::Vector2f(0,0);
 	m_ParentCell = nullptr;
-	m_IsWalkable = true;
 	m_GCost = 0;
 	m_HCost = 0;
 	m_FCost = 0;
@@ -37,12 +46,11 @@ Cell::~Cell(){}
 // If debugging is true draw the sprite and index text
 void Cell::draw(){
 	GraphicManager::getInstance()->draw(m_CellShape);
+	GraphicManager::getInstance()->draw(*m_pSprite);
 	if (Game::getDebugging()){
 		//GraphicManager::getInstance()->draw(*m_pSprite);
 		GraphicManager::getInstance()->draw(m_IndexText);
 	}
-	else if (m_pWallShape)
-		GraphicManager::getInstance()->draw(*m_pWallShape);
 }
 
 // Returns the sprite
@@ -102,13 +110,12 @@ void Cell::setSpriteTexture(sf::Texture* pTexture){
 void Cell::setIsWalkable(bool walkable){
 	m_IsWalkable = walkable;
 	if (walkable){
-		m_pSprite->setTexture(*TextureManager::getInstance()->getTexture("Grid_G"));
-		createWallShape();
+		//m_pSprite->setTexture(*TextureManager::getInstance()->getTexture("Grid_G"));
+		m_CellShape.setOutlineColor(sf::Color::Green);
 	}
 	else{
-		m_pSprite->setTexture(*TextureManager::getInstance()->getTexture("Grid_R"));
-		delete m_pWallShape;
-		m_pWallShape = nullptr;
+		//m_pSprite->setTexture(*TextureManager::getInstance()->getTexture("Grid_R"));
+		m_CellShape.setOutlineColor(sf::Color::Red);
 	}
 }
 
@@ -135,10 +142,4 @@ void Cell::clearValues(){
 	m_HCost = 0;
 	m_FCost = 0;
 	m_ParentCell = nullptr;
-}
-
-// Create a rectangle shape that is as big as the sprite
-void Cell::createWallShape(){
-	m_pWallShape = new sf::RectangleShape(sf::Vector2f(m_pSprite->getLocalBounds().width, m_pSprite->getLocalBounds().height));
-	m_pWallShape->setPosition(m_pSprite->getPosition());
 }

@@ -70,10 +70,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\CaveExplorer - Copy\CaveExplorer\CollisionManager.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="ActorAgent.cpp" />
     <ClCompile Include="AnimatedActor.cpp" />
+    <ClCompile Include="AttackState.cpp" />
     <ClCompile Include="Cave.cpp" />
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
@@ -81,6 +81,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GraphicManager.cpp" />
     <ClCompile Include="GridManager.cpp" />
+    <ClCompile Include="Health.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Level.cpp" />
@@ -96,10 +97,10 @@
     <ClCompile Include="UIButton.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\CaveExplorer - Copy\CaveExplorer\CollisionManager.h" />
     <ClInclude Include="Actor.h" />
     <ClInclude Include="ActorAgent.h" />
     <ClInclude Include="AnimatedActor.h" />
+    <ClInclude Include="AttackState.h" />
     <ClInclude Include="Cave.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="CollisionManager.h" />
@@ -107,6 +108,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GraphicManager.h" />
     <ClInclude Include="GridManager.h" />
+    <ClInclude Include="Health.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Level.h" />

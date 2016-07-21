@@ -13,8 +13,8 @@ void GameState::enter() {
 
 }
 
-void GameState::update(Game* game, float dt) {
-	Player* player = game->getGameState()->getPlayer();
+void GameState::update(const Game* game, const float dt) {
+	/*Player* player = game->getGameState()->getPlayer();
 	for (auto i = m_Items.begin(); i != m_Items.end(); i++) {
 		if ((*i)->isPressed(player->getPosition())) {
 			int kalle = 0;
@@ -31,7 +31,7 @@ void GameState::update(Game* game, float dt) {
 			handleButtonEvent(game, (*i)->getEvent());
 		}
 		(*i)->draw();
-	}
+	}*/
 }
 
 void GameState::exit() {

@@ -1,6 +1,8 @@
 #include "CollisionManager.h"
-#include "CaveTile.h"
+#include "GridManager.h"
+//#include "CaveTile.h"
 #include "Actor.h"
+#include "Cell.h"
 
 CollisionManager* CollisionManager::m_Instance = new CollisionManager();
 
@@ -12,9 +14,9 @@ CollisionManager* CollisionManager::getInstance() {
 	return m_Instance;
 }
 
-void CollisionManager::collisionDetection() {
-	actorCaveCollisionDetection();
-	actorActorCollisionDetection();
+void CollisionManager::collisionDetection(Level* level) {
+	actorCaveCollisionDetection(level);
+	actorActorCollisionDetection(level);
 }
 
 void CollisionManager::addActorToCollision(Actor* actor) {
@@ -25,7 +27,7 @@ void CollisionManager::addCaveTilesCollision(Actor* caveTile) {
 	m_CaveTiles.push_back(caveTile);
 }
 
-void CollisionManager::actorActorCollisionDetection() {
+void CollisionManager::actorActorCollisionDetection(Level* level) {
 	for (auto i0 = m_Actors.begin(); i0 != m_Actors.end(); i0++) {
 		for (auto i1 = m_Actors.begin(); i1 != m_Actors.end(); i1++) {
 			if (i0 == i1)
@@ -56,8 +58,8 @@ void CollisionManager::actorActorCollisionDetection() {
 	}
 }
 
-void CollisionManager::actorCaveCollisionDetection() {
-	for (auto ia = m_Actors.begin(); ia != m_Actors.end(); ia++) {
+void CollisionManager::actorCaveCollisionDetection(Level* level) {
+	/*for (auto ia = m_Actors.begin(); ia != m_Actors.end(); ia++) {
 		for (auto ic = m_CaveTiles.begin(); ic != m_CaveTiles.end(); ic++) {
 			sf::Vector2f posC = (*ia)->getPosition();
 			sf::Vector2f posR = (*ic)->getPosition();
@@ -79,6 +81,43 @@ void CollisionManager::actorCaveCollisionDetection() {
 				delta.y > 0 ? delta.y -= r * 2 : delta.y += r * 2;
 				posC.y -= delta.y;
 				(*ia)->setPosition(posC);
+			}
+
+			float deltaCorner = (((delta.x - r / 2) * (delta.x - r / 2)) +
+				((delta.y - r / 2) * (delta.x - r / 2)));
+
+			if (deltaCorner > r * 2) //false
+				continue;
+		}
+	}*/
+
+	GridManager::CellVector cells = *GridManager::getInstance()->getCellVector();
+
+	for (auto it : m_Actors) {
+		for (auto jt : cells) {
+			if (jt->getIsWalkable())
+				continue;
+
+			sf::Vector2f posC = it->getPosition();
+			sf::Vector2f posR = *jt->getPosition();
+			float r = it->getRadius();
+
+			sf::Vector2f delta = sf::Vector2f(std::abs(posC.x - posR.x),
+				std::abs(posC.y - posR.y));
+
+			if (delta.x > r * 2 || delta.y > r * 2) //false
+				continue;
+			else if (delta.x <= r * 2 && delta.x > delta.y) { //true
+				delta = posC - posR;
+				delta.x > 0 ? delta.x -= r * 2 : delta.x += r * 2;
+				posC.x -= delta.x;
+				it->setPosition(posC);
+			}
+			else if (delta.y <= r * 2 && delta.y > delta.x) { //true
+				delta = posC - posR;
+				delta.y > 0 ? delta.y -= r * 2 : delta.y += r * 2;
+				posC.y -= delta.y;
+				it->setPosition(posC);
 			}
 
 			float deltaCorner = (((delta.x - r / 2) * (delta.x - r / 2)) +

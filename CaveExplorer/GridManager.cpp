@@ -49,11 +49,15 @@ void GridManager::initialize(){
 	const float width = GraphicManager::getInstance()->getWindow()->getSize().x / GRID_WIDTH;
 	const float height = GraphicManager::getInstance()->getWindow()->getSize().y / GRID_HEIGHT;
 	sf::Vector2f pos(0, 0);
+	sf::Vector2u gridPos(0, 0);
 	for (int i = 0; i < GRID_HEIGHT; i++){
 		for (int j = 0; j < GRID_WIDTH; j++){
-			m_GridCells.push_back(new Cell(pos, width, height));
+			m_GridCells.push_back(new Cell(pos, width, height, gridPos));
+			gridPos.x++;
 			pos.x += width;
 		}
+		gridPos.x = 0;
+		gridPos.y++;
 		pos.x = 0;
 		pos.y += height;
 	}
