@@ -1,7 +1,7 @@
 #include "UIButton.h"
 #include "InputManager.h"
 #include "TextureManager.h"
-#include "GraphicsManager.h"
+#include "GraphicManager.h"
 
 UIButton::UIButton(Event e, sf::Vector2f pos, std::string text){
 	m_Sprite = new sf::Sprite();
@@ -11,7 +11,7 @@ UIButton::UIButton(Event e, sf::Vector2f pos, std::string text){
 	m_Sprite->setOrigin(m_Sprite->getLocalBounds().width / 2, m_Sprite->getLocalBounds().height / 2);
 	m_Sprite->setPosition(pos);
 
-	m_Text.setFont(*GraphicsManager::getInstance()->getFont());
+	m_Text.setFont(*GraphicManager::getInstance()->getFont());
 	m_Text.setCharacterSize(32);
 	m_Text.setString(text);
 	m_Text.setOrigin(m_Text.getLocalBounds().width / 2,
@@ -26,13 +26,13 @@ UIButton::UIButton(Event e, sf::Vector2f pos, std::string text){
 UIButton::~UIButton(){}
 
 void UIButton::draw() {
-	GraphicsManager::getInstance()->draw(m_Sprite);
-	GraphicsManager::getInstance()->draw(&m_Text);
+	GraphicManager::getInstance()->draw(*m_Sprite);
+	GraphicManager::getInstance()->draw(m_Text);
 }
 
 bool UIButton::isPressed() {
-	sf::Vector2f mousePos = sf::Vector2f(	sf::Mouse::getPosition(*GraphicsManager::getInstance()->getWindow()).x,
-											sf::Mouse::getPosition(*GraphicsManager::getInstance()->getWindow()).y );
+	sf::Vector2f mousePos = sf::Vector2f(	sf::Mouse::getPosition(*GraphicManager::getInstance()->getWindow()).x,
+											sf::Mouse::getPosition(*GraphicManager::getInstance()->getWindow()).y );
 
 	if (InputManager::getInstance()->isKeyPressed(InputManager::Interact) && m_Rect.contains(mousePos)) {
 		m_Sprite->setTextureRect(sf::IntRect(m_Rect.width, 0, m_Rect.width, m_Rect.height));

@@ -12,5 +12,5 @@ public:
 	virtual void update(Game* game, float dt);
 	virtual void exit();
 private:
-	Cave m_Cave;
+	//Cave m_Cave;
 };

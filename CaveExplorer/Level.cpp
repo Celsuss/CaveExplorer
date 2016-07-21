@@ -3,12 +3,12 @@
 #include "Game.h"
 #include "Actor.h"
 #include "Player.h"
+#include "GridManager.h"
 
 Level::Level(){
 	m_State = State::Level;
-	m_Cave.generateCave(this);
+	GridManager::getInstance()->initialize();
 	createActor(new Player(sf::Vector2f(100, 100)));
-	//m_Actors.push_back(new Player(sf::Vector2f(100, 100)));
 }
 
 Level::~Level(){}
@@ -18,7 +18,7 @@ void Level::enter() {
 }
 
 void Level::update(Game* game, float dt) {
-	m_Cave.draw();
+	GridManager::getInstance()->update();
 	GameState::update(game, dt);
 }
 

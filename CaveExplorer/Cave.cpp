@@ -1,9 +1,12 @@
 #include "Cave.h"
 #include "Rat.h"
+#include "Cell.h"
 #include "Level.h"
 #include "Stairs.h"
 #include <time.h>
 #include <stdlib.h>
+
+/*Cave* Cave::m_Instance = new Cave();
 
 Cave::Cave(){
 	srand(time(NULL));
@@ -17,10 +20,8 @@ void Cave::update() {
 }
 
 void Cave::draw() {
-	for (auto i0 = m_Tiles.begin(); i0 != m_Tiles.end(); i0++) {
-		for (auto i1 = i0->begin(); i1 != i0->end(); i1++) {
-			(*i1)->draw();
-		}
+	for (auto i : m_Cells){
+		i->draw();
 	}
 }
 
@@ -48,6 +49,13 @@ void Cave::generateCaveWalls(Level* level) {
 			}
 		}
 	}
+
+	sf::Vector2u pos;
+	for (int i = 0; i < CAVE_HEIGHT; i++){
+		for (int j = 0; j < CAVE_WIDTH; j++){
+			m_Cells.push_back(new Cell(pos, i + (j * CAVE_WIDTH)));
+		}
+	}
 }
 
 void Cave::generateCaveMonsters(Level* level) {
@@ -69,6 +77,13 @@ void Cave::clearCaveTilesIsFull() {
 				(*i1)->setIsEmpty(false);
 		}
 	}
+
+	for (auto it : m_Cells){
+		if (it->getTileType() == CaveTile::Floor)
+			it->setIsEmpty(true);
+		else
+			it->setIsEmpty(false);
+	}
 }
 
 CaveTile* Cave::getRandomEmptyCaveTile() {
@@ -82,4 +97,4 @@ CaveTile* Cave::getRandomEmptyCaveTile() {
 		tile = m_Tiles[gridPos.x][gridPos.y];
 	}
 	return tile;
-}
+}*/

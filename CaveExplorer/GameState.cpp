@@ -1,5 +1,6 @@
 #include "GameState.h"
 #include "UIButton.h"
+#include "Player.h"
 #include "Actor.h"
 #include "Item.h"
 #include "Game.h"

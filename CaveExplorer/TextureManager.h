@@ -12,11 +12,12 @@ public:
 	static TextureManager* getInstance();
 
 	sf::Texture* getTexture(std::string name);
-	bool loadTexture(std::string name);
 private:
 	TextureManager();
 	~TextureManager();
 	static TextureManager* m_Instance;
+
+	bool loadTexture(std::string name);
 
 	TextureMap m_Textures;
 };

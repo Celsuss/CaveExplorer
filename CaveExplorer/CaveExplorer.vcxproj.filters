@@ -5,170 +5,179 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Actors">
-      <UniqueIdentifier>{15b97392-ce08-4e51-bfce-13322d94de45}</UniqueIdentifier>
+      <UniqueIdentifier>{7c3cba41-7f99-4a21-adbf-c14134f70053}</UniqueIdentifier>
     </Filter>
     <Filter Include="Graphics">
-      <UniqueIdentifier>{6af2c757-882c-43f1-aea6-aebc945c97ce}</UniqueIdentifier>
+      <UniqueIdentifier>{387c7308-0d48-4f9a-94f7-f37470bd668e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="System">
-      <UniqueIdentifier>{7dc1cad0-0112-4f84-91ab-13693d723ebf}</UniqueIdentifier>
+    <Filter Include="Game">
+      <UniqueIdentifier>{beb7959e-d9c1-476a-8d2b-9df7adac486f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game States">
-      <UniqueIdentifier>{e54dbb77-893b-4f5e-a8ad-a93d94163b09}</UniqueIdentifier>
+    <Filter Include="Agent States">
+      <UniqueIdentifier>{4197e3de-5a93-4d62-9a1f-926fa2c63b30}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Cave">
-      <UniqueIdentifier>{e8f6c2f8-50da-4de4-b124-d83f92845c74}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Physics">
-      <UniqueIdentifier>{74fa098f-2fa5-4406-b58e-9b0f56c2a579}</UniqueIdentifier>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{feffa33f-b60d-4e45-a370-b449432cf6d4}</UniqueIdentifier>
     </Filter>
     <Filter Include="UI">
-      <UniqueIdentifier>{36e5533b-e519-4dd4-9812-493dc0c28425}</UniqueIdentifier>
+      <UniqueIdentifier>{4e24990b-3c9e-4464-b07d-378c32b8c62d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AI">
-      <UniqueIdentifier>{81f0ba76-849a-48d9-af2c-92d0fd5a31e8}</UniqueIdentifier>
+    <Filter Include="Grid">
+      <UniqueIdentifier>{089b3e22-ebb4-45a1-84ae-bd27a5179852}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
-      <Filter>System</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Actor.cpp">
-      <Filter>Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphicsManager.cpp">
+    <ClCompile Include="GraphicManager.cpp">
       <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>System</Filter>
-    </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Actors</Filter>
     </ClCompile>
     <ClCompile Include="TextureManager.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Usable.cpp">
-      <Filter>Actors</Filter>
+    <ClCompile Include="Cell.cpp">
+      <Filter>Grid</Filter>
     </ClCompile>
-    <ClCompile Include="Level.cpp">
-      <Filter>Game States</Filter>
+    <ClCompile Include="GridManager.cpp">
+      <Filter>Grid</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Game States</Filter>
+      <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="GameState.cpp">
-      <Filter>Game States</Filter>
+    <ClCompile Include="Pathfinder.cpp">
+      <Filter>Systems</Filter>
     </ClCompile>
-    <ClCompile Include="Cave.cpp">
-      <Filter>Cave</Filter>
+    <ClCompile Include="..\..\CaveExplorer - Copy\CaveExplorer\CollisionManager.cpp">
+      <Filter>Systems</Filter>
     </ClCompile>
-    <ClCompile Include="CaveTile.cpp">
-      <Filter>Cave</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionManager.cpp">
-      <Filter>Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Game States</Filter>
-    </ClCompile>
-    <ClCompile Include="UIButton.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Rat.cpp">
-      <Filter>Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="Stairs.cpp">
-      <Filter>Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="PatrolState.cpp">
-      <Filter>AI</Filter>
-    </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>AI</Filter>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ActorAgent.cpp">
-      <Filter>Actors</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AnimatedActor.cpp">
-      <Filter>Actors</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PatrolState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stairs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cave.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Actor.h">
-      <Filter>Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphicsManager.h">
+    <ClInclude Include="GraphicManager.h">
       <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="InputManager.h">
-      <Filter>System</Filter>
-    </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Actors</Filter>
     </ClInclude>
     <ClInclude Include="TextureManager.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Usable.h">
-      <Filter>Actors</Filter>
+    <ClInclude Include="Cell.h">
+      <Filter>Grid</Filter>
     </ClInclude>
-    <ClInclude Include="Level.h">
-      <Filter>Game States</Filter>
+    <ClInclude Include="GridManager.h">
+      <Filter>Grid</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Game States</Filter>
+      <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>Game States</Filter>
+    <ClInclude Include="Pathfinder.h">
+      <Filter>Systems</Filter>
     </ClInclude>
-    <ClInclude Include="Cave.h">
-      <Filter>Cave</Filter>
+    <ClInclude Include="..\..\CaveExplorer - Copy\CaveExplorer\CollisionManager.h">
+      <Filter>Systems</Filter>
     </ClInclude>
-    <ClInclude Include="CaveTile.h">
-      <Filter>Cave</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionManager.h">
-      <Filter>Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Game States</Filter>
-    </ClInclude>
-    <ClInclude Include="UIButton.h">
-      <Filter>UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Rat.h">
-      <Filter>Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="Stairs.h">
-      <Filter>Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="PatrolState.h">
-      <Filter>AI</Filter>
-    </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>AI</Filter>
+    <ClInclude Include="Actor.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ActorAgent.h">
-      <Filter>Actors</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AnimatedActor.h">
-      <Filter>Actors</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatrolState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stairs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cave.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

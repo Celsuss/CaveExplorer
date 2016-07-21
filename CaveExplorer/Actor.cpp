@@ -1,5 +1,5 @@
 #include "Actor.h"
-#include "GraphicsManager.h"
+#include "GraphicManager.h"
 #include "TextureManager.h"
 
 Actor::Actor(std::string name, ActorType type, sf::Vector2f pos){
@@ -23,7 +23,7 @@ void Actor::update(float dt) {
 void Actor::draw(){
 	if (m_Sprite != nullptr){
 		m_Sprite->setPosition(m_Position);
-		GraphicsManager::getInstance()->draw(m_Sprite);
+		GraphicManager::getInstance()->draw(*m_Sprite);
 	}
 }
 
