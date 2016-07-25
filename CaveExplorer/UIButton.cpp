@@ -34,7 +34,7 @@ bool UIButton::isPressed() {
 	sf::Vector2f mousePos = sf::Vector2f(	sf::Mouse::getPosition(*GraphicManager::getInstance()->getWindow()).x,
 											sf::Mouse::getPosition(*GraphicManager::getInstance()->getWindow()).y );
 
-	if (InputManager::getInstance()->isKeyPressed(InputManager::Interact) && m_Rect.contains(mousePos)) {
+	if (InputManager::getInstance()->isKeyPressed(InputManager::Attack) && m_Rect.contains(mousePos)) {
 		m_Sprite->setTextureRect(sf::IntRect(m_Rect.width, 0, m_Rect.width, m_Rect.height));
 		return true;
 	}

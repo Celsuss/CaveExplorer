@@ -10,7 +10,7 @@ public:
 		Left,
 		Down,
 		Right,
-		Interact,
+		Attack,
 		Secendary,
 		UseItem
 	};

@@ -4,11 +4,11 @@
 
 Item::Item(std::string name, sf::Vector2f pos, ItemType itemType):
 Actor(name, ActorType::Item, pos){
-	m_Rect = m_Sprite->getGlobalBounds();
+	m_Rect = m_pSprite->getGlobalBounds();
 	m_ItemType = itemType;
 
 	sf::Vector2f newPos = pos;
-	sf::Vector2f spritePos = m_Sprite->getPosition();
+	sf::Vector2f spritePos = m_pSprite->getPosition();
 }
 
 Item::~Item(){}
@@ -19,7 +19,7 @@ bool Item::isPressed(sf::Vector2f actorPos) {
 	sf::Vector2f mousePos = sf::Vector2f(	sf::Mouse::getPosition(*GraphicManager::getInstance()->getWindow()).x,
 											sf::Mouse::getPosition(*GraphicManager::getInstance()->getWindow()).y );
 	
-	float r = m_Sprite->getLocalBounds().width / 2;
+	float r = m_pSprite->getLocalBounds().width / 2;
 	sf::Vector2f delta = sf::Vector2f(	std::abs(actorPos.x - m_Position.x),
 										std::abs(actorPos.y - m_Position.y) );
 
@@ -27,7 +27,7 @@ bool Item::isPressed(sf::Vector2f actorPos) {
 		return false;
 	}
 
-	if (InputManager::getInstance()->isKeyPressed(InputManager::Interact) && m_Rect.contains(mousePos)) {
+	if (InputManager::getInstance()->isKeyPressed(InputManager::Attack) && m_Rect.contains(mousePos)) {
 		return true;
 	}
 

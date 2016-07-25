@@ -81,7 +81,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GraphicManager.cpp" />
     <ClCompile Include="GridManager.cpp" />
-    <ClCompile Include="Health.cpp" />
+    <ClCompile Include="HealthBar.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Level.cpp" />
@@ -90,11 +90,14 @@
     <ClCompile Include="Pathfinder.cpp" />
     <ClCompile Include="PatrolState.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerWeapon.cpp" />
     <ClCompile Include="Rat.cpp" />
     <ClCompile Include="Stairs.cpp" />
     <ClCompile Include="State.cpp" />
+    <ClCompile Include="Stick.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="UIButton.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -108,7 +111,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GraphicManager.h" />
     <ClInclude Include="GridManager.h" />
-    <ClInclude Include="Health.h" />
+    <ClInclude Include="HealthBar.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Level.h" />
@@ -116,11 +119,14 @@
     <ClInclude Include="Pathfinder.h" />
     <ClInclude Include="PatrolState.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerWeapon.h" />
     <ClInclude Include="Rat.h" />
     <ClInclude Include="Stairs.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="Stick.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="UIButton.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

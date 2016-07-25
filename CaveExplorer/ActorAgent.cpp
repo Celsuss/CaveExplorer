@@ -10,9 +10,10 @@ Actor(name, ActorType::Hostile, pos){
 
 ActorAgent::~ActorAgent(){}
 
-void ActorAgent::update(float dt) {
+void ActorAgent::update(const float dt) {
 	//(*m_pCurrentState)->execute(this, dt);
 	m_pCurrentState->execute(this, dt);
+	Actor::update(dt);
 }
 
 void ActorAgent::setState(State* pState) {

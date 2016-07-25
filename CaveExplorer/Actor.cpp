@@ -1,30 +1,46 @@
 #include "Actor.h"
+#include "HealthBar.h"
+#include "GridManager.h"
 #include "GraphicManager.h"
 #include "TextureManager.h"
+#include <math.h>
+
+const float Actor::SIZE_MULTIPLIER = 0.08;
 
 Actor::Actor(std::string name, ActorType type, sf::Vector2f pos){
+	sf::Vector2u* windowSize = &GraphicManager::getInstance()->getWindow()->getSize();
 	if (type != ActorType::Cave) {
-		m_Sprite = new sf::Sprite();
-		m_Sprite->setTexture(*TextureManager::getInstance()->getTexture(name));
-		m_Sprite->setOrigin(m_Sprite->getLocalBounds().width / 2, m_Sprite->getLocalBounds().height / 2);
-		m_Sprite->setPosition(pos);
+		m_pSprite = new sf::Sprite();
+		m_pSprite->setTexture(*TextureManager::getInstance()->getTexture(name));
+
+		m_pSprite->setOrigin(m_pSprite->getLocalBounds().width / 2, m_pSprite->getLocalBounds().height / 2);
+		m_pSprite->setPosition(pos);
+
+		m_pSprite->setScale(windowSize->x / m_pSprite->getTextureRect().width * SIZE_MULTIPLIER,
+							windowSize->y / m_pSprite->getTextureRect().height * SIZE_MULTIPLIER);
+		
+		m_pHealthBar = new HealthBar(100, m_pSprite->getTextureRect().width, m_pSprite->getTextureRect().height, pos);
 	}
 	m_Type = type;
 	m_Position = pos;
-	m_MovementSpeed = 2;
+	m_MovementSpeed = std::sqrtf((windowSize->x * windowSize->x) + (windowSize->y * windowSize->y)) * 0.005;
 }
 
 Actor::~Actor(){}
 
-void Actor::update(float dt) {
+void Actor::update(const float dt) {
 	m_PrevPosition = m_Position;
+	if (m_pHealthBar)
+		m_pHealthBar->update(100, m_Position);
 }
 
 void Actor::draw(){
-	if (m_Sprite != nullptr){
-		m_Sprite->setPosition(m_Position);
-		GraphicManager::getInstance()->draw(*m_Sprite);
+	if (m_pSprite){
+		m_pSprite->setPosition(m_Position);
+		GraphicManager::getInstance()->draw(*m_pSprite);
 	}
+	if (m_pHealthBar)
+		m_pHealthBar->draw();
 }
 
 sf::Vector2f& Actor::getPosition() {
@@ -35,13 +51,17 @@ void Actor::setPosition(sf::Vector2f pos) {
 	m_Position = pos;
 }
 
+sf::FloatRect Actor::getSize() const{
+	return m_Size;
+}
+
 void Actor::setPosition(float x, float y) {
 	m_Position.x = x;
 	m_Position.y = y;
 }
 
 float Actor::getRadius() {
-	return m_Sprite->getLocalBounds().width / 2;
+	return m_pSprite->getLocalBounds().width / 2;
 }
 
 Actor::ActorType Actor::getActorType() {

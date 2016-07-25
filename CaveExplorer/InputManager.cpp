@@ -8,7 +8,7 @@ InputManager::InputManager(){
 	m_Keys[Action::Left] = sf::Keyboard::A;
 	m_Keys[Action::Down] = sf::Keyboard::S;
 	m_Keys[Action::Right] = sf::Keyboard::D;
-	m_Buttons[Action::Interact] = sf::Mouse::Left;
+	m_Buttons[Action::Attack] = sf::Mouse::Left;
 	m_Buttons[Action::Secendary] = sf::Mouse::Right;
 	m_Keys[Action::UseItem] = sf::Keyboard::E;
 }

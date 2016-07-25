@@ -9,7 +9,7 @@ class ActorAgent : public Actor{
 public:
 	ActorAgent(std::string name, sf::Vector2f pos);
 	virtual ~ActorAgent();
-	virtual void update(float dt);
+	virtual void update(const float dt);
 	virtual void setState(State* pState);
 protected:
 	State* m_pCurrentState;

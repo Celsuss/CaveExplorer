@@ -37,6 +37,9 @@
     <Filter Include="AI">
       <UniqueIdentifier>{e8a6b44d-bc74-428a-bb69-a99689d279fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Weapons">
+      <UniqueIdentifier>{db1abdfb-d0a7-49a0-b2b0-c26d7a735cfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -111,8 +114,17 @@
     <ClCompile Include="AttackState.cpp">
       <Filter>AI</Filter>
     </ClCompile>
-    <ClCompile Include="Health.cpp">
+    <ClCompile Include="HealthBar.cpp">
       <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerWeapon.cpp">
+      <Filter>Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Stick.cpp">
+      <Filter>Weapons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -185,8 +197,17 @@
     <ClInclude Include="AttackState.h">
       <Filter>AI</Filter>
     </ClInclude>
-    <ClInclude Include="Health.h">
+    <ClInclude Include="HealthBar.h">
       <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Stick.h">
+      <Filter>Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerWeapon.h">
+      <Filter>Weapons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -27,6 +27,7 @@ Game::~Game(){}
 
 // Start the game
 void Game::run(){
+	GraphicManager::getInstance()->initialize();
 	setGameState(GameState::Level);
 	update();
 }
@@ -64,7 +65,6 @@ void Game::setEndGame(bool end) {
 
 // Updates the program and all game objects
 void Game::update(){
-	GraphicManager::getInstance()->initialize();
 	GridManager::getInstance()->initialize();
 	initialize();
 

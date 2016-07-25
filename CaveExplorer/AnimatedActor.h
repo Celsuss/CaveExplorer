@@ -6,7 +6,7 @@ class AnimatedActor : public Actor{
 public:
 	AnimatedActor(std::string name, ActorType type, sf::Vector2f pos, int frameCountWidth, int frameCountHeight);
 	virtual ~AnimatedActor();
-	virtual void update(float dt);
+	virtual void update(const float dt);
 
 protected:
 	sf::IntRect m_SpriteRect;

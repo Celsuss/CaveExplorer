@@ -1,17 +1,20 @@
 #include "Player.h"
 #include "InputManager.h"
 #include "CollisionManager.h"
+#include "Stick.h"
 
 Player::Player(sf::Vector2f pos):
 	AnimatedActor("Player", ActorType::Player, pos, 4, 4){
 	CollisionManager::getInstance()->addActorToCollision(this);
+	m_pWeapon = new Stick();
 }
 
 Player::~Player(){}
 
-void Player::update(float dt){
+void Player::update(const float dt){
 	move();
 	AnimatedActor::update(dt);
+	m_pWeapon->update(dt);
 }
 
 void Player::move() {
