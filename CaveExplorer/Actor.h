@@ -17,7 +17,7 @@ public:
 		Cave
 	};
 
-	Actor(std::string name, ActorType type, sf::Vector2f pos);
+	Actor(const std::string name, const ActorType type, const sf::Vector2f pos, const float speed);
 	virtual ~Actor();
 	virtual void update(const float dt);
 	virtual void draw();
@@ -33,7 +33,7 @@ protected:
 	sf::Sprite* m_pSprite;
 	sf::Vector2f m_Position;
 	sf::Vector2f m_PrevPosition;
-	sf::Vector2f m_Rotation;
+	sf::Vector2f m_Direction;
 	float m_MovementSpeed;
 	HealthBar* m_pHealthBar;
 	sf::FloatRect m_Size;

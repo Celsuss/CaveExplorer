@@ -7,7 +7,7 @@
 
 const float Actor::SIZE_MULTIPLIER = 0.08;
 
-Actor::Actor(std::string name, ActorType type, sf::Vector2f pos){
+Actor::Actor(const std::string name, const ActorType type, const sf::Vector2f pos, const float speed){
 	sf::Vector2u* windowSize = &GraphicManager::getInstance()->getWindow()->getSize();
 	if (type != ActorType::Cave) {
 		m_pSprite = new sf::Sprite();
@@ -23,7 +23,7 @@ Actor::Actor(std::string name, ActorType type, sf::Vector2f pos){
 	}
 	m_Type = type;
 	m_Position = pos;
-	m_MovementSpeed = std::sqrtf((windowSize->x * windowSize->x) + (windowSize->y * windowSize->y)) * 0.005;
+	m_MovementSpeed = std::sqrtf((windowSize->x * windowSize->x) + (windowSize->y * windowSize->y)) * speed;
 }
 
 Actor::~Actor(){}

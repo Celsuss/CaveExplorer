@@ -1,14 +1,14 @@
 #pragma once
 #include "AnimatedActor.h"
 
-class PlayerWeapon;
+class Weapon;
 
 class Player : public AnimatedActor {
 public:
 	Player(sf::Vector2f pos);
 	~Player();
 	virtual void update(const float dt);
-protected:
-	void move();
-	PlayerWeapon* m_pWeapon;
+private:
+	void move(const float dt);
+	Weapon* m_pWeapon;
 };

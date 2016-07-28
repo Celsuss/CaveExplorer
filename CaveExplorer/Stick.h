@@ -1,7 +1,7 @@
 #pragma once
-#include "PlayerWeapon.h"
+#include "Weapon.h"
 
-class Stick : public PlayerWeapon{
+class Stick : public Weapon{
 public:
 	Stick();
 	virtual ~Stick();

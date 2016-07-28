@@ -4,7 +4,9 @@
 
 class AnimatedActor : public Actor{
 public:
-	AnimatedActor(std::string name, ActorType type, sf::Vector2f pos, int frameCountWidth, int frameCountHeight);
+	static const float ANIMATION_SPEED_MULTIPLIER;
+
+	AnimatedActor(const std::string name, const ActorType type, const sf::Vector2f pos, const float speed, const unsigned int frameCountWidth, const unsigned int frameCountHeight);
 	virtual ~AnimatedActor();
 	virtual void update(const float dt);
 
@@ -12,8 +14,8 @@ protected:
 	sf::IntRect m_SpriteRect;
 	int m_SpriteSheetWidth;
 	float m_AnimationSpeed;
-	float m_AnimationCountdown;;
+	float m_AnimationCountdown;
 
 private:
-	void updateAnimation(float dt);
+	void updateAnimation(const float dt);
 };

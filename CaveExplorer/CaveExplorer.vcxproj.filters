@@ -117,13 +117,13 @@
     <ClCompile Include="HealthBar.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerWeapon.cpp">
-      <Filter>Weapons</Filter>
-    </ClCompile>
     <ClCompile Include="Weapon.cpp">
       <Filter>Weapons</Filter>
     </ClCompile>
     <ClCompile Include="Stick.cpp">
+      <Filter>Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Club.cpp">
       <Filter>Weapons</Filter>
     </ClCompile>
   </ItemGroup>
@@ -206,7 +206,7 @@
     <ClInclude Include="Stick.h">
       <Filter>Weapons</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerWeapon.h">
+    <ClInclude Include="Club.h">
       <Filter>Weapons</Filter>
     </ClInclude>
   </ItemGroup>

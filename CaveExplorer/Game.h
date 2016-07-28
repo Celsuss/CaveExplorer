@@ -38,7 +38,7 @@ private:
 	sf::Text m_DTimerText;
 	sf::Clock m_Clock;
 	sf::Time m_LastTime;
-	float m_DeltaTime;
+	sf::Time m_DeltaTime;
 	bool m_Restart;
 	bool m_EndGame;
 

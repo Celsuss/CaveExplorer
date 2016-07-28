@@ -1,6 +1,6 @@
 #include "Stick.h"
 
 Stick::Stick():
-PlayerWeapon(AttackType::Slash, 35, 10){}
+Weapon(AttackType::Slash, 35, 10, ""){}
 
 Stick::~Stick(){}

@@ -76,6 +76,7 @@
     <ClCompile Include="AttackState.cpp" />
     <ClCompile Include="Cave.cpp" />
     <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="Club.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -90,7 +91,6 @@
     <ClCompile Include="Pathfinder.cpp" />
     <ClCompile Include="PatrolState.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="PlayerWeapon.cpp" />
     <ClCompile Include="Rat.cpp" />
     <ClCompile Include="Stairs.cpp" />
     <ClCompile Include="State.cpp" />
@@ -106,6 +106,7 @@
     <ClInclude Include="AttackState.h" />
     <ClInclude Include="Cave.h" />
     <ClInclude Include="Cell.h" />
+    <ClInclude Include="Club.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
@@ -119,7 +120,6 @@
     <ClInclude Include="Pathfinder.h" />
     <ClInclude Include="PatrolState.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="PlayerWeapon.h" />
     <ClInclude Include="Rat.h" />
     <ClInclude Include="Stairs.h" />
     <ClInclude Include="State.h" />

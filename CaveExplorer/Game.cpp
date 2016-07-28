@@ -76,7 +76,7 @@ void Game::update(){
 
 		updateDeltaTime();
 		handleEvents();
-		m_pCurrentState->update(this, m_DeltaTime);
+		m_pCurrentState->update(this, m_DeltaTime.asSeconds());
 
 		GraphicManager::getInstance()->draw(m_DTimerText);
 		//GraphicManager::getInstance()->draw(m_Text);
@@ -102,10 +102,10 @@ void Game::handleEvents(){
 		if (event.type == sf::Event::Closed)
 			GraphicManager::getInstance()->getWindow()->close();
 		if (event.type == sf::Event::KeyPressed){
-			if (event.key.code == sf::Keyboard::R){
+			/*if (event.key.code == sf::Keyboard::R){
 				m_Restart = true;
 				std::cout << "Restarting" << std::endl << std::endl;
-			}
+			}*/
 			if (event.key.code == sf::Keyboard::H){
 				m_Debug = !m_Debug;
 				std::cout << "Debuging " << m_Debug  << std::endl;
@@ -117,9 +117,9 @@ void Game::handleEvents(){
 // Updates the delta time
 void Game::updateDeltaTime(){
 	sf::Time nowTime = m_Clock.getElapsedTime();
-	m_DeltaTime = nowTime.asMilliseconds() - m_LastTime.asMilliseconds();
+	m_DeltaTime = nowTime - m_LastTime;
 	m_LastTime = nowTime;
 
-	m_DTimerText.setString(std::to_string(m_DeltaTime));
-	m_DTimerText.setPosition(GraphicManager::getInstance()->getWindow()->getSize().x - m_DTimerText.getLocalBounds().width, 0);
+	m_DTimerText.setString(std::to_string(m_DeltaTime.asMilliseconds()));
+	m_DTimerText.setPosition(GraphicManager::getInstance()->getWindow()->getSize().x - m_DTimerText.getLocalBounds().width - 10, 0);
 }
