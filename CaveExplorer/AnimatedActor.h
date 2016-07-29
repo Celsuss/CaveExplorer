@@ -6,7 +6,7 @@ class AnimatedActor : public Actor{
 public:
 	static const float ANIMATION_SPEED_MULTIPLIER;
 
-	AnimatedActor(const std::string name, const ActorType type, const sf::Vector2f pos, const float speed, const unsigned int frameCountWidth, const unsigned int frameCountHeight);
+	AnimatedActor(const std::string name, const ActorType type, const sf::Vector2f pos, const unsigned int health, const float speed, const unsigned int frameCountWidth, const unsigned int frameCountHeight);
 	virtual ~AnimatedActor();
 	virtual void update(const float dt);
 

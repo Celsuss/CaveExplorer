@@ -4,10 +4,10 @@
 #include "Club.h"
 
 Player::Player(sf::Vector2f pos):
-	AnimatedActor("Player", ActorType::Player, pos, 0.2, 4, 4){
+	AnimatedActor("Player", ActorType::Player, pos, 100, 0.2, 4, 4){
 	CollisionManager::getInstance()->addActorToCollision(this);
 	m_Direction = sf::Vector2f(0, 1);
-	m_pWeapon = new Club();
+	m_pWeapon = new Club(m_Type);
 }
 
 Player::~Player(){}

@@ -1,6 +1,6 @@
 #include "Stick.h"
 
-Stick::Stick():
-Weapon(AttackType::Slash, 35, 10, ""){}
+Stick::Stick(const Actor::ActorType actorType) :
+Weapon(actorType, AttackType::Slash, 35, 10, ""){}
 
 Stick::~Stick(){}

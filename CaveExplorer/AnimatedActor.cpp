@@ -4,8 +4,8 @@
 
 const float AnimatedActor::ANIMATION_SPEED_MULTIPLIER = 0.0015;
 
-AnimatedActor::AnimatedActor(const std::string name, const ActorType type, const sf::Vector2f pos, const float speed, const unsigned int frameCountWidth, const unsigned int frameCountHeight) :
-	Actor(name, type, pos, speed){
+AnimatedActor::AnimatedActor(const std::string name, const ActorType type, const sf::Vector2f pos, const unsigned int health, const float speed, const unsigned int frameCountWidth, const unsigned int frameCountHeight) :
+	Actor(name, type, pos, health, speed){
 	sf::Vector2u* windowSize = &GraphicManager::getInstance()->getWindow()->getSize();
 
 	m_SpriteRect.left = 0;

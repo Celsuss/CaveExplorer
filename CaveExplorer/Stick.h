@@ -3,6 +3,6 @@
 
 class Stick : public Weapon{
 public:
-	Stick();
+	Stick(const Actor::ActorType actorType);
 	virtual ~Stick();
 };

@@ -7,7 +7,7 @@
 
 const float Actor::SIZE_MULTIPLIER = 0.08;
 
-Actor::Actor(const std::string name, const ActorType type, const sf::Vector2f pos, const float speed){
+Actor::Actor(const std::string name, const ActorType type, const sf::Vector2f pos, const unsigned int health, const float speed){
 	sf::Vector2u* windowSize = &GraphicManager::getInstance()->getWindow()->getSize();
 	if (type != ActorType::Cave) {
 		m_pSprite = new sf::Sprite();
@@ -19,7 +19,7 @@ Actor::Actor(const std::string name, const ActorType type, const sf::Vector2f po
 		m_pSprite->setScale(windowSize->x / m_pSprite->getTextureRect().width * SIZE_MULTIPLIER,
 							windowSize->y / m_pSprite->getTextureRect().height * SIZE_MULTIPLIER);
 		
-		m_pHealthBar = new HealthBar(100, m_pSprite->getTextureRect().width, m_pSprite->getTextureRect().height, pos);
+		m_pHealthBar = new HealthBar(health, m_pSprite->getTextureRect().width, m_pSprite->getTextureRect().height, pos);
 	}
 	m_Type = type;
 	m_Position = pos;
@@ -31,7 +31,7 @@ Actor::~Actor(){}
 void Actor::update(const float dt) {
 	m_PrevPosition = m_Position;
 	if (m_pHealthBar)
-		m_pHealthBar->update(100, m_Position);
+		m_pHealthBar->update(m_Position);
 }
 
 void Actor::draw(){
@@ -43,7 +43,7 @@ void Actor::draw(){
 		m_pHealthBar->draw();
 }
 
-sf::Vector2f& Actor::getPosition() {
+const sf::Vector2f& Actor::getPosition() const {
 	return m_Position;
 }
 
@@ -51,7 +51,7 @@ void Actor::setPosition(sf::Vector2f pos) {
 	m_Position = pos;
 }
 
-sf::FloatRect Actor::getSize() const{
+const sf::FloatRect Actor::getSize() const{
 	return m_Size;
 }
 
@@ -60,10 +60,14 @@ void Actor::setPosition(float x, float y) {
 	m_Position.y = y;
 }
 
-float Actor::getRadius() {
+const float Actor::getRadius() const{
 	return m_pSprite->getLocalBounds().width / 2;
 }
 
-Actor::ActorType Actor::getActorType() {
+const Actor::ActorType Actor::getActorType() const{
 	return m_Type;
+}
+
+void Actor::addDamage(const float damage){
+	m_pHealthBar->addDamage(damage);
 }

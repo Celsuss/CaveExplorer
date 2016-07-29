@@ -3,7 +3,7 @@
 #include "GraphicManager.h"
 
 Item::Item(std::string name, sf::Vector2f pos, ItemType itemType):
-Actor(name, ActorType::Item, pos, 0){
+Actor(name, ActorType::Item, pos, 0, 0){
 	m_Rect = m_pSprite->getGlobalBounds();
 	m_ItemType = itemType;
 

@@ -3,8 +3,8 @@
 #include "PatrolState.h"
 #include "CollisionManager.h"
 
-ActorAgent::ActorAgent(const std::string name, const sf::Vector2f pos, const float speed) :
-Actor(name, ActorType::Hostile, pos, speed){
+ActorAgent::ActorAgent(const std::string name, const sf::Vector2f pos, const unsigned int health, const float speed) :
+Actor(name, ActorType::Hostile, pos, health, speed){
 	CollisionManager::getInstance()->addActorToCollision(this);
 }
 

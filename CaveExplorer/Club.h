@@ -3,6 +3,6 @@
 
 class Club : public Weapon{
 public:
-	Club();
+	Club(const Actor::ActorType actorType);
 	virtual ~Club();
 };

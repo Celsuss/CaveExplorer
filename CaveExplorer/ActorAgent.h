@@ -7,7 +7,7 @@ class State;
 
 class ActorAgent : public Actor{
 public:
-	ActorAgent(const std::string name, const sf::Vector2f pos, const float speed);
+	ActorAgent(const std::string name, const sf::Vector2f pos, const unsigned int health, const float speed);
 	virtual ~ActorAgent();
 	virtual void update(const float dt);
 	virtual void setState(State* pState);

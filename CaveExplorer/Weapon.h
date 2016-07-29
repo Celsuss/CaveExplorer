@@ -1,22 +1,34 @@
 #pragma once
 #include "SFML/Graphics/Sprite.hpp"
+#include "Actor.h"
 #include <string>
+#include <vector>
 
 class Weapon{
 public:
+	typedef std::vector<Actor*>ActorVector;
+
 	enum AttackType{
 		Slash,
 		Stab,
 		Poke
 	};
 
-	Weapon(AttackType type, const unsigned int range, const float damage, const std::string spriteName);
+	Weapon(const Actor::ActorType actorType, const AttackType attackType, const unsigned int range, const float damage, const std::string spriteName);
 	virtual ~Weapon();
-	void update(const float dt, const sf::Vector2f pos, const sf::Vector2f dir, const bool attack);
+	virtual void update(const float dt, const sf::Vector2f pos, const sf::Vector2f dir, const bool attack);
+	virtual const sf::Vector2f& getPosition() const;
+	virtual const float getRadius() const;
+	virtual const Actor::ActorType& getActorOwnerType() const;
+	virtual const float getDamage() const;
 
+	virtual void addSwingTarget(Actor* actor);
+	virtual bool isTargetHit(Actor* actor);
 protected:
-	const unsigned int m_cRange;
+	ActorVector m_SwingTargets;
+	const Actor::ActorType m_cActorOwnerType;
 	const AttackType m_cAttackType;
+	unsigned int m_Range;
 	float m_Damage;
 	bool m_Attack;
 

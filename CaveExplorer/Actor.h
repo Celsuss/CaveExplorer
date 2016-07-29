@@ -17,17 +17,17 @@ public:
 		Cave
 	};
 
-	Actor(const std::string name, const ActorType type, const sf::Vector2f pos, const float speed);
+	Actor(const std::string name, const ActorType type, const sf::Vector2f pos, const unsigned int health, const float speed);
 	virtual ~Actor();
 	virtual void update(const float dt);
 	virtual void draw();
-	virtual sf::Vector2f& getPosition();
+	virtual const sf::Vector2f& getPosition() const;
 	virtual void setPosition(sf::Vector2f pos);
 	virtual void setPosition(float x, float y);
-	virtual sf::FloatRect getSize() const;
-	virtual float getRadius();
-	virtual ActorType getActorType();
-
+	virtual const sf::FloatRect getSize() const;
+	virtual const float getRadius() const;
+	virtual const ActorType getActorType() const;
+	virtual void addDamage(const float damage);
 protected:
 	ActorType m_Type;
 	sf::Sprite* m_pSprite;
