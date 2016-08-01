@@ -28,6 +28,7 @@ public:
 	virtual const float getRadius() const;
 	virtual const ActorType getActorType() const;
 	virtual void addDamage(const float damage);
+	virtual const bool getIsAlive() const;
 protected:
 	ActorType m_Type;
 	sf::Sprite* m_pSprite;

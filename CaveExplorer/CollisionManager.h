@@ -4,8 +4,8 @@
 #include <vector>
 
 class Actor;
-class Level;
 class Weapon;
+class GameState;
 
 class CollisionManager{
 public:
@@ -13,9 +13,10 @@ public:
 	typedef std::vector<Weapon*> WeaponVector;
 
 	static CollisionManager* getInstance();
-	void collisionDetection(Level* level);
+	void collisionDetection(GameState* gameState);
 	void addActorToCollision(Actor* actor);
 	void addWeaponCollision(Weapon* weapon);
+	void removeActorFromCollision(Actor* actor);
 private:
 	CollisionManager();
 	~CollisionManager();

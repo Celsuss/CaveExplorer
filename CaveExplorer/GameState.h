@@ -29,8 +29,10 @@ public:
 
 	virtual void createActor(Actor* actor);
 	virtual Player* getPlayer();
+	virtual ActorVector& getActors();
 protected:
-	void handleButtonEvent(Game* game, UIButton::Event e);
+	virtual void handleButtonEvent(Game* game, UIButton::Event e);
+	virtual void deleteDeadActors();
 
 	ActorVector m_Actors;
 	ItemVector m_Items;

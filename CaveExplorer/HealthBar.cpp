@@ -64,8 +64,12 @@ void HealthBar::addDamage(const float damage){
 	m_Health -= damage;
 }
 
+float HealthBar::getHealth()const{
+	return m_Health;
+}
+
 void HealthBar::updateBarSize(){
-	float health = m_Health / m_MaxHealth;
+	float health = m_Health / (float)m_MaxHealth;
 	m_BarWidth = m_BarMaxWidth * health;
 	m_Bar.setSize(sf::Vector2f(m_BarWidth, m_BarHeight));
 }

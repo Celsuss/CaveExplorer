@@ -15,7 +15,7 @@ CollisionManager* CollisionManager::getInstance() {
 	return m_Instance;
 }
 
-void CollisionManager::collisionDetection(Level* level) {
+void CollisionManager::collisionDetection(GameState* gameState) {
 	actorCaveCollisionDetection();
 	actorActorCollisionDetection();
 	actorWeaponCollisionDetection();
@@ -27,6 +27,16 @@ void CollisionManager::addActorToCollision(Actor* actor) {
 
 void CollisionManager::addWeaponCollision(Weapon* weapon) {
 	m_Weapons.push_back(weapon);
+}
+
+void CollisionManager::removeActorFromCollision(Actor* actor){
+	for (auto it = m_Actors.begin(); it != m_Actors.end(); it++){
+		if (*it == actor){
+			m_Actors.erase(it);
+			return;
+		}
+	}
+	std::cout << "Failed to remove actor from CollisionManager" << std::endl;
 }
 
 void CollisionManager::actorActorCollisionDetection() {

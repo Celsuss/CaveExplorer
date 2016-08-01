@@ -26,7 +26,12 @@ Actor::Actor(const std::string name, const ActorType type, const sf::Vector2f po
 	m_MovementSpeed = std::sqrtf((windowSize->x * windowSize->x) + (windowSize->y * windowSize->y)) * speed;
 }
 
-Actor::~Actor(){}
+Actor::~Actor(){
+	if (m_pHealthBar)
+		delete m_pHealthBar;
+	if (m_pSprite)
+		delete m_pSprite;
+}
 
 void Actor::update(const float dt) {
 	m_PrevPosition = m_Position;
@@ -70,4 +75,14 @@ const Actor::ActorType Actor::getActorType() const{
 
 void Actor::addDamage(const float damage){
 	m_pHealthBar->addDamage(damage);
+}
+
+const bool Actor::getIsAlive() const{
+	if (!m_pHealthBar)
+		return true;
+
+	if (m_pHealthBar->getHealth() <=  0)
+		return false;
+	else
+		return true;
 }

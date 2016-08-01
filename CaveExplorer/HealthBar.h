@@ -10,13 +10,17 @@ public:
 	void draw();
 	void setSize(const unsigned int width, const unsigned int height);
 	void addDamage(const float damage);
+	float getHealth() const;
 private:
 	void updateBarSize();
 
 	unsigned int m_BarHeight;
 	unsigned int m_BarMaxWidth;
-	float m_MaxHealth;
+	//float m_MaxHealth;
+	//float m_Health;
+	unsigned int m_MaxHealth;
 	float m_Health;
+
 	float m_BarWidth;
 	int m_DeltaPosY;
 	sf::RectangleShape m_Bar;

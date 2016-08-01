@@ -28,7 +28,9 @@ AnimatedActor::AnimatedActor(const std::string name, const ActorType type, const
 	m_AnimationCountdown = 0;
 }
 
-AnimatedActor::~AnimatedActor(){}
+AnimatedActor::~AnimatedActor(){
+	Actor::~Actor();
+}
 
 void AnimatedActor::update(float dt) {
 	updateAnimation(dt);

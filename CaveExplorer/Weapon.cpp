@@ -42,6 +42,7 @@ Weapon::~Weapon(){}
 void Weapon::update(const float dt, const sf::Vector2f pos, const sf::Vector2f dir, const bool attack){
 	if (attack && !m_Attack){
 		m_Attack = attack;
+		m_SwingTargets.clear();
 		setPosition(pos, dir);
 		setRotation(dir);
 	}
@@ -83,12 +84,12 @@ bool Weapon::isTargetHit(Actor* actor){
 }
 
 void Weapon::updateAnimation(const float dt){
-	m_AnimationCountdown -= dt;
+	//m_AnimationCountdown -= dt;
+	m_AnimationCountdown -= 0.015;
 	if (m_SpriteRect.left * m_SpriteRect.width >= m_SpriteSheetWidth){
 		m_Attack = false;
 		m_SpriteRect.left = 0;
 		m_AnimationCountdown = m_AnimationSpeed;
-		m_SwingTargets.clear();
 	}
 
 	if (m_AnimationCountdown <= 0) {
